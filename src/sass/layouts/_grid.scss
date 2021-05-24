@@ -1,0 +1,24 @@
+@import "../abstracts/variables";
+
+.row {
+    max-width: $grid-width;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix;
+
+    [class^="col-"] {
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizondal;
+        }
+    }
+
+    .col {
+        width: calc((100% -#{$gutter-horizondal}) / 2);
+    }
+}

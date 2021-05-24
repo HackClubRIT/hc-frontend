@@ -1,14 +1,12 @@
-$color-primary-dark: #ec3750;
-
-$color-snow: #f9fafc;
-$color-dark: #17171d;
+@import "../abstracts/variables";
 
 .btn {
     &:link,
     &:visited {
         text-transform: uppercase;
         text-decoration: none;
-        font-weight: 700;
+        font-weight: normal;
+        letter-spacing: 2px;
         padding: 15px 40px;
         display: inline-block;
         border-radius: 100px;
@@ -59,14 +57,3 @@ $color-dark: #17171d;
     }
 }
 
-@keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
