@@ -1,9 +1,14 @@
+$color-primary-light: #ff8c37;
+$color-primary-dark: #ec3750;
+
+$color-snow: #f9fafc;
+
 .header {
     height: 95vh;
     background: linear-gradient(
             to left bottom,
-            rgba(236, 55, 80, 0.8),
-            rgba(255, 140, 55, 0.8)
+            rgba($color-primary-dark, 0.8),
+            rgba($color-primary-light, 0.8)
         ),
         url(./images/header.jpg);
     background-size: cover;
@@ -11,49 +16,49 @@
     position: relative;
 
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
 
-.logo-box {
-    position: absolute;
-    left: 40px;
-}
+    &__logo-box {
+        position: absolute;
+        left: 40px;
+    }
 
-.logo {
-    height: 70px;
-}
+    &__logo {
+        height: 70px;
+    }
 
-.text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
 }
 
 .heading-primary {
-    color: var(--theme-ui-colors-snow);
+    color: $color-snow;
     text-transform: uppercase;
 
     backface-visibility: hidden;
     margin-bottom: 60px;
-}
 
-.heading-primary-main {
-    display: block;
-    font-size: 60px;
-    font-weight: 500;
-    letter-spacing: 30px;
+    &--main {
+        display: block;
+        font-size: 60px;
+        font-weight: 900;
+        letter-spacing: 30px;
 
-    animation: moveInRight 1s ease-in-out;
-}
+        animation: moveInRight 1s ease-in-out;
+    }
 
-.heading-primary-sub {
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 12px;
+    &--sub {
+        display: block;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 12px;
 
-    animation: moveInLeft 1s ease-in-out;
+        animation: moveInLeft 1s ease-in-out;
+    }
 }
 
 @keyframes moveInLeft {

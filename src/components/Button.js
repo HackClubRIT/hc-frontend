@@ -1,8 +1,8 @@
-import "./button.css";
+import "./button.scss";
 
 const Button = () => {
     return (
-        <a href={"/apply"} className="btn btn-white btn-animated">
+        <a href={"/apply"} className="btn btn--white btn--animated">
         Apply Now</a>
     );
 };
