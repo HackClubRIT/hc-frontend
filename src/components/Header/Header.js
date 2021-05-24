@@ -1,6 +1,6 @@
 import "./header.scss";
 import logo from "./images/hackFlag.png";
-import Button from "./Button";
+import Button from "../Button/Button";
 
 const Header = () => {
     return (
