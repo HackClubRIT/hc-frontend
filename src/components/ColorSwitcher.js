@@ -8,8 +8,8 @@ const ColorSwitcher = (props) => {
       title={`Switch to ${mode === 'dark' ? 'light' : 'dark'} mode`}
       sx={{
         position: 'absolute',
-        top: [2, 3],
-        right: [2, 3],
+        top: [2, 1],
+        right: [2, 1],
         color: 'primary',
         cursor: 'pointer',
         borderRadius: 'circle',
