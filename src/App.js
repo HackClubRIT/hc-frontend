@@ -13,40 +13,40 @@ import ColorSwitcher from "./components/ColorSwitcher";
 import Footer from "./components/Footer";
 
 function App() {
-    return (
-        <ThemeProvider theme={theme}>
-            <ColorSwitcher />
-            <Switch>
-                <Route path="/" exact>
-                    <HomePage />
-                </Route>
-                <Route path="/apply">
-                    <ApplicationPage />
-                </Route>
-                <Route path="/events">
-                    <EventsPage />
-                </Route>
-                <Route path="/feedback">
-                    <FeedbackPage />
-                </Route>
-                <Route path="/auth">
-                    <AuthPage />
-                </Route>
-                <Route path="/profile" exact>
-                    <ProfilePage />
-                </Route>
-                <Route path="/profile/application" exact>
-                    <AuthApplicationPage />
-                </Route>
-                {/* <Route path="/profile/application/:id">
+  return (
+    <ThemeProvider theme={theme}>
+      <ColorSwitcher />
+      <Switch>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+        <Route path="/apply">
+          <ApplicationPage />
+        </Route>
+        <Route path="/events">
+          <EventsPage />
+        </Route>
+        <Route path="/feedback">
+          <FeedbackPage />
+        </Route>
+        <Route path="/auth">
+          <AuthPage />
+        </Route>
+        <Route path="/profile" exact>
+          <ProfilePage />
+        </Route>
+        <Route path="/profile/application" exact>
+          <AuthApplicationPage />
+        </Route>
+        {/* <Route path="/profile/application/:id">
                 <AuthApplicationPage />
             </Route> */}
-                {/* <Route path="/profile/events"><AuthEventsPage /></Route>
+        {/* <Route path="/profile/events"><AuthEventsPage /></Route>
             <Route path="/profile/feedback"><AuthFeedbackPage /></Route> */}
-            </Switch>
-            <Footer />
-        </ThemeProvider>
-    );
+      </Switch>
+      <Footer />
+    </ThemeProvider>
+  );
 }
 
 export default App;
