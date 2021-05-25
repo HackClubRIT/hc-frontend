@@ -66,17 +66,17 @@ const About = () => {
                         <img
                             src={img1}
                             alt="1"
-                            class="composition__photo composition__photo--p1"
+                            className="composition__photo composition__photo--p1"
                         />
                         <img
                             src={img2}
                             alt="2"
-                            class="composition__photo composition__photo--p2"
+                            className="composition__photo composition__photo--p2"
                         />
                         <img
                             src={img3}
                             alt="3"
-                            class="composition__photo composition__photo--p3"
+                            className="composition__photo composition__photo--p3"
                         />
                     </div>
                 </div>
