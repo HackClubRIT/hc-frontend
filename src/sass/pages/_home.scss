@@ -1,7 +1,11 @@
 @import "../abstracts/variables";
 
 .section-about {
-    background-color: $color-smoke;
+    background-color: $color-snow;
     padding: 25rem 0;
     margin-top: -20vh;
+
+    @include respond(tab-port) {
+        padding: 20rem 0;
+    }
 }

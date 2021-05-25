@@ -6,9 +6,14 @@ $color-snow: #f9fafc;
 $color-smoke: #f7f7f7;
 $color-muted: #8492a6;
 $color-dark: #17171d;
-$color-yellow: #f1c40f;
+$color-darkless: #252429;
+
+// FONT
+$default-font-size: 1.4rem;
+
 
 // GRID
 $grid-width: 114rem;
 $gutter-vertical: 8rem;
-$gutter-horizondal: 6rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;

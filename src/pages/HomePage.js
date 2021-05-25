@@ -1,8 +1,12 @@
-import Header from "../components/Header/Header";
+import Header from "../components/Header";
+import About from "../components/About";
 
 const HomePage = () => {
     return (
-        <Header />
+        <div>
+            <Header />
+            <About />
+        </div>
     );
 };
 
