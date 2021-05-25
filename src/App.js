@@ -10,6 +10,7 @@ import FeedbackPage from "./pages/FeedbackPage";
 import ApplicationPage from "./pages/ApplicationsPage";
 import AuthApplicationPage from "./pages/auth/Application";
 import ColorSwitcher from "./components/ColorSwitcher";
+import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -43,6 +44,7 @@ function App() {
                 {/* <Route path="/profile/events"><AuthEventsPage /></Route>
             <Route path="/profile/feedback"><AuthFeedbackPage /></Route> */}
             </Switch>
+            <Footer />
         </ThemeProvider>
     );
 }
