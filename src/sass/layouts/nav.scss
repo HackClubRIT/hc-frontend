@@ -1,0 +1,124 @@
+@import "../abstracts/variables";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  font-size: $default-font-size;
+  padding: 6px 1.4rem;
+  z-index: 15;
+
+  @include respond(tab-port) {
+    position: relative;
+    width: 100%;
+  }
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: 0.5fr auto 0.5fr;
+  align-items: center;
+  height: 6rem;
+  width: 90%;
+  max-width: 1720px;
+  margin: 0 auto;
+
+  &__top {
+    background: transparent;
+
+    a {
+      color: $color-snow;
+    }
+  }
+
+  &__moved {
+    background-color: $color-snow;
+    box-shadow: 0 0.5rem 2rem rgba($color-dark, 0.2);
+    a {
+      color: $color-dark;
+    }
+  }
+
+  &__logo-box {
+    position: absolute;
+    left: 10%;
+    margin-top: -6px;
+  }
+
+  &__logo {
+    height: 6rem;
+    cursor: pointer;
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    justify-self: end;
+
+    @include respond(tab-port) {
+      display: grid;
+      grid-template-columns: auto;
+      background: $color-primary-dark;
+      margin: 0;
+      width: 100%;
+      position: absolute;
+      top: 8rem;
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+
+    &::active {
+      @include respond(tab-port) {
+        background: $color-primary-dark;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__link {
+    padding: 0 3rem;
+    &:link,
+    &:visited {
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.2s;
+
+      @include respond(tab-port) {
+        text-align: center;
+        line-height: 6rem;
+        font-size: medium;
+        width: 100%;
+        display: table;
+      }
+    }
+
+    &:hover,
+    &:active {
+      color: $color-dark;
+      transform: rotate(5deg) scale(1);
+
+      @include respond(tab-port) {
+        background: $color-primary-light;
+        transition: all 0.4s ease-out;
+      }
+    }
+  }
+
+  &__menu-toggle,
+  &__bar {
+    background-color: aqua;
+  }
+}

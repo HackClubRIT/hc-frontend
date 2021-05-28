@@ -11,10 +11,12 @@ import ApplicationPage from "./pages/ApplicationsPage";
 import AuthApplicationPage from "./pages/auth/Application";
 import ColorSwitcher from "./components/ColorSwitcher";
 import Footer from "./components/Footer";
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <Nav />
       <ColorSwitcher />
       <Switch>
         <Route path="/" exact>

@@ -1,12 +1,8 @@
-import logo from "../assets/hackFlag.png";
 import Button from "./Button";
 
 const Header = () => {
   return (
     <header className="header">
-      <div className="header__logo-box">
-        <img className="header__logo" src={logo} alt="logo"></img>
-      </div>
       <div className="header__text-box">
         <h1 className="heading-primary">
           <span className="heading-primary--main">Hack Club RIT</span>
