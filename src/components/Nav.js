@@ -19,10 +19,10 @@ const Nav = () => {
           <img className="nav__logo" src={logo} alt="logo"></img>
         </div>
         <div className="nav__menu-toggle" id="mobile-menu">
-          <span class="nav__bar"></span>
-          <span class="nav__bar"></span>
-          <span class="nav__bar"></span>
-          <span class="nav__bar"></span>
+          <span className="nav__bar"></span>
+          <span className="nav__bar"></span>
+          <span className="nav__bar"></span>
+          <span className="nav__bar"></span>
         </div>
         <ul className="nav__menu">
           <NavItem href="/" label="Events" />
