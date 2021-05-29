@@ -6,7 +6,7 @@ import NavItem from "./NavItem";
 const Nav = () => {
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
-    if (window.scrollY >= 750) setColorchange(true);
+    if (window.scrollY >= 120) setColorchange(true);
     else setColorchange(false);
   };
 
@@ -28,7 +28,7 @@ const Nav = () => {
           <NavItem href="/" label="Events" />
           <NavItem href="/" label="Scrapbook" />
           <NavItem href="/" label="Contact Us" />
-          <NavItem href="/" label="LogIn" />
+          <NavItem href="auth" label="LogIn" />
         </ul>
       </nav>
     </div>

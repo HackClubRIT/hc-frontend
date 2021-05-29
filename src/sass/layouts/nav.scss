@@ -33,8 +33,8 @@
   }
 
   &__moved {
-    background-color: $color-snow;
-    box-shadow: 0 0.5rem 2rem rgba($color-dark, 0.2);
+    background: linear-gradient($color-muted, $color-snow);
+    // box-shadow: 0 0.5rem 2rem rgba($color-dark, 0.2);
     a {
       color: $color-dark;
     }
@@ -58,15 +58,16 @@
     justify-self: end;
 
     @include respond(tab-port) {
-      display: grid;
-      grid-template-columns: auto;
-      background: $color-primary-dark;
-      margin: 0;
-      width: 100%;
-      position: absolute;
-      top: 8rem;
-      opacity: 1;
-      transition: all 0.5s ease;
+      display: none;
+      // display: grid;
+      // grid-template-columns: auto;
+      // background: $color-primary-dark;
+      // margin: 0;
+      // width: 100%;
+      // position: absolute;
+      // top: 8rem;
+      // opacity: 1;
+      // transition: all 0.5s ease;
     }
 
     &::active {
