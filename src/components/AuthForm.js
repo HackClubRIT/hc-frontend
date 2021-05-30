@@ -1,10 +1,18 @@
-import { useState, useRef } from "react";
-import { isEmailValid } from "../utils/validiate";
+import { useState, useRef, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
+import { isEmailValid } from "../utils/validiate";
+import AuthContext from "../store/auth-context";
+
 const AuthForm = () => {
+
+  const history = useHistory();
+
   const emailInuputRef = useRef();
   const passwordInputRef = useRef();
+
+  const authCtx = useContext(AuthContext);
 
   const [isLogin, setIsLogin] = useState(false);
 
@@ -30,9 +38,17 @@ const AuthForm = () => {
             "http://localhost:8000/auth/token/",
             formData
           );
-          console.log(res);
+          authCtx.login(res.data.access_token);
+          history.push("/profile/application")
         } catch (error) {
-          alert(error.response.data.detail);
+          let errorMessage;
+          if (error.response.status === 422)
+            errorMessage = "Please enter a vaild email id or password";
+          else if (error.response.status === 500)
+            errorMessage = "Opps, something went wrong please try again later!";
+          else errorMessage = error.response.data.detail;
+
+          alert(errorMessage);
         }
       }
     }

@@ -36,7 +36,6 @@
     }
 
     &--toggle {
-        margin-top: 1rem;
         font-size: $default-font-size;
         padding: .5rem 4rem;
         background-color: transparent;
@@ -61,6 +60,7 @@
     &--orange {
         font-size: $default-font-size;
         padding: .5rem 4rem;
+        margin-bottom: 1rem;
         background-color: $color-primary-dark;
         color: $color-snow;
 

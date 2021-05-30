@@ -1,9 +1,16 @@
 import logo from "../assets/hackFlag.png";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 import NavItem from "./NavItem";
+import AuthContext from "../store/auth-context";
 
 const Nav = () => {
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
+  const logoutHandler = () => {
+    authCtx.logout();
+  }
+
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
     if (window.scrollY >= 120) setColorchange(true);
@@ -28,7 +35,10 @@ const Nav = () => {
           <NavItem href="/" label="Events" />
           <NavItem href="/" label="Scrapbook" />
           <NavItem href="/" label="Contact Us" />
-          <NavItem href="auth" label="LogIn" />
+          {!isLoggedIn && <NavItem href="auth" label="LogIn" />}
+          <li className="nav__item">
+            {isLoggedIn && <button className="btn--toggle" onClick={logoutHandler}> Logout </button>}
+          </li>
         </ul>
       </nav>
     </div>

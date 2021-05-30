@@ -1,4 +1,5 @@
-import { Route, Switch } from "react-router-dom";
+import { useContext } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { ThemeProvider } from "theme-ui";
 import theme from "@hackclub/theme";
 
@@ -12,8 +13,11 @@ import AuthApplicationPage from "./pages/auth/Application";
 // import ColorSwitcher from "./components/ColorSwitcher";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
+import AuthContext from "./store/auth-context";
 
 function App() {
+  const authCtx = useContext(AuthContext);
+
   return (
     <ThemeProvider theme={theme}>
       <Nav />
@@ -31,20 +35,30 @@ function App() {
         <Route path="/feedback">
           <FeedbackPage />
         </Route>
-        <Route path="/auth">
-          <AuthPage />
-        </Route>
-        <Route path="/profile" exact>
-          <ProfilePage />
-        </Route>
-        <Route path="/profile/application" exact>
-          <AuthApplicationPage />
-        </Route>
+        {!authCtx.isLoggedIn && (
+          <Route path="/auth">
+            <AuthPage />
+          </Route>
+        )}
+        {authCtx.isLoggedIn && (
+          <Route path="/profile" exact>
+            <ProfilePage />
+          </Route>
+        )}
+        {authCtx.isLoggedIn && (
+          <Route path="/profile/application" exact>
+            <AuthApplicationPage />
+          </Route>
+        )}
+
         {/* <Route path="/profile/application/:id">
                 <AuthApplicationPage />
             </Route> */}
         {/* <Route path="/profile/events"><AuthEventsPage /></Route>
             <Route path="/profile/feedback"><AuthFeedbackPage /></Route> */}
+      <Route path="*">
+        <Redirect to="/" />
+      </Route>
       </Switch>
       <Footer />
     </ThemeProvider>
