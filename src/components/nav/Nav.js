@@ -1,8 +1,8 @@
-import logo from "../assets/hackFlag.png";
+import logo from "../../assets/hackFlag.png";
 
 import { useState, useContext } from "react";
 import NavItem from "./NavItem";
-import AuthContext from "../store/auth-context";
+import AuthContext from "../../store/auth-context";
 
 const Nav = () => {
   const authCtx = useContext(AuthContext);
@@ -23,7 +23,7 @@ const Nav = () => {
     <div className={colorChange ? "navbar nav__moved" : "navbar nav__top"}>
       <nav className="nav">
         <div className="nav__logo-box">
-          <img className="nav__logo" src={logo} alt="logo"></img>
+          <a href="/"><img className="nav__logo" src={logo} alt="logo"></img></a>
         </div>
         <div className="nav__menu-toggle" id="mobile-menu">
           <span className="nav__bar"></span>

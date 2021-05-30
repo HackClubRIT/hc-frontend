@@ -1,4 +1,4 @@
-import logo from "../assets/flag.png";
+import logo from "../../assets/flag.png";
 import FooterItem from "./FooterItem";
 
 const Footer = () => {
