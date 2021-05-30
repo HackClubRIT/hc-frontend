@@ -72,7 +72,7 @@ body {
 
 .underline--magical {
     background-image: radial-gradient(
-        $color-primary-light 0%,
+        $color-primary 0%,
         $color-snow 100%
     );
     background-repeat: no-repeat;
@@ -86,12 +86,12 @@ body {
 
 /* Style the rainbow text element. */
 .rainbow-text {
-    background-color: $color-primary-light;
+    background-color: $color-primary;
 
     /* Create the gradient. */
     background-image: linear-gradient(
         45deg,
-        $color-primary-light 16.666%,
+        $color-primary 16.666%,
         #e16541 16.666%,
         #e16541 33.333%,
         #f18f43 33.333%,
