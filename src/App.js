@@ -6,10 +6,10 @@ import theme from "@hackclub/theme";
 import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage";
 import EventsPage from "./pages/EventsPage";
-import ProfilePage from "./pages/auth/ProfilePage";
+import ProfilePage from "./pages/ProfilePage";
 import FeedbackPage from "./pages/FeedbackPage";
-import ApplicationPage from "./pages/ApplicationsPage";
-import AuthApplicationPage from "./pages/auth/Application";
+import ApplicationPage from "./pages/Applications/ApplicationsPage";
+import ApplicationsViewPage from "./pages/Applications/ApplicationsView";
 // import ColorSwitcher from "./components/ColorSwitcher";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
@@ -35,6 +35,12 @@ function App() {
         <Route path="/feedback">
           <FeedbackPage />
         </Route>
+        <Route path="/scrapbook">
+          <FeedbackPage />
+        </Route>
+        <Route path="/contact">
+          <FeedbackPage />
+        </Route>
         {!authCtx.isLoggedIn && (
           <Route path="/auth">
             <AuthPage />
@@ -47,11 +53,11 @@ function App() {
         )}
         {authCtx.isLoggedIn && (
           <Route path="/profile/application" exact>
-            <AuthApplicationPage />
+            <ApplicationsViewPage />
           </Route>
         )}
         {/* <Route path="/profile/application/:id">
-                <AuthApplicationPage />
+                <ApplicationsViewPage />
             </Route> */}
         {/* <Route path="/profile/events"><AuthEventsPage /></Route>
             <Route path="/profile/feedback"><AuthFeedbackPage /></Route> */}

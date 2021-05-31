@@ -1,0 +1,28 @@
+.container {
+  display: table;
+  height: 100vh;
+  width: 100%;
+  padding-top: 10rem;
+  font-size: $default-font-size;
+  color: $color-snow;
+  text-align: center;
+}
+
+.application {
+  margin: 2rem auto 0 auto;
+  padding: 2rem 2rem;
+  width: 33%;
+  border-radius: 1.5rem;
+  background: $color-darkless;
+  box-shadow: 0 2px 4px rgba($color-dark, 0.26);
+  text-align: left;
+
+  &:first-child {
+    margin-top: 30vh;
+  }
+
+  &:last-child {
+    margin-bottom: 5rem;
+  }
+
+}

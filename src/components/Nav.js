@@ -34,10 +34,11 @@ const Nav = () => {
           <span className="nav__bar"></span>
         </div>
         <ul className="nav__menu">
-          <Links href="/" label="Events" type="nav" />
-          <Links href="/" label="Scrapbook" type="nav" />
-          <Links href="/" label="Contact Us" type="nav" />
-          {!isLoggedIn && <Links href="auth" label="LogIn" type="nav"/>}
+          <Links href="events" label="Events" type="nav" />
+          <Links href="scrapbook" label="Scrapbook" type="nav" />
+          {!isLoggedIn && <Links href="contact" label="Contact Us" type="nav" />}
+          {isLoggedIn && <Links href="profile" label="profile" type="nav" />}
+          {!isLoggedIn && <Links href="auth" label="LogIn" type="nav" />}
           <li className="nav__item">
             {isLoggedIn && (
               <button className="nav__btn nav__link" onClick={logoutHandler}>

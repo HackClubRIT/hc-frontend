@@ -1,8 +1,8 @@
 import { useRef, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
+import axiosInstance from "../store/axios";
 
-import { isEmailValid } from "../utils/validiate";
+import { isEmailValid } from "../store/validiate";
 import AuthContext from "../store/auth-context";
 
 const AuthPage = () => {
@@ -25,10 +25,7 @@ const AuthPage = () => {
       formData.append("password", enteredPassword);
 
       try {
-        const res = await axios.post(
-          "http://localhost:8000/auth/token/",
-          formData
-        );
+        const res = await axiosInstance.post("auth/token/", formData);
         authCtx.login(res.data.access_token);
         history.push("/profile/application");
       } catch (error) {
@@ -50,9 +47,11 @@ const AuthPage = () => {
         <h1 className="heading-secondary u-margin-bottom-small">Login</h1>
         <form onSubmit={submitHandler}>
           <div className="auth__control">
-            <label className="heading-tertiary" htmlFor="email">Your Email</label>
+            <label className="heading-tertiary" htmlFor="email">
+              Your Email
+            </label>
             <input
-              class="input"
+              className="input"
               type="email"
               id="email"
               required
@@ -60,9 +59,11 @@ const AuthPage = () => {
             />
           </div>
           <div className="auth__control">
-            <label className="heading-tertiary" htmlFor="password">Your Password</label>
+            <label className="heading-tertiary" htmlFor="password">
+              Your Password
+            </label>
             <input
-              class="input"
+              className="input"
               type="password"
               id="password"
               required
