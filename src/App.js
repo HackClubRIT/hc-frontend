@@ -11,8 +11,8 @@ import FeedbackPage from "./pages/FeedbackPage";
 import ApplicationPage from "./pages/ApplicationsPage";
 import AuthApplicationPage from "./pages/auth/Application";
 // import ColorSwitcher from "./components/ColorSwitcher";
-import Footer from "./components/footer/Footer";
-import Nav from "./components/nav/Nav";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
 import AuthContext from "./store/auth-context";
 
 function App() {
@@ -50,14 +50,6 @@ function App() {
             <AuthApplicationPage />
           </Route>
         )}
-        <Route
-          path="/conduct"
-          render={() => (window.location = "https://hackclub.com/conduct/")}
-        />
-        <Route
-          path="/philosophy"
-          render={() => (window.location = "https://hackclub.com/philosophy/")}
-        />
         {/* <Route path="/profile/application/:id">
                 <AuthApplicationPage />
             </Route> */}

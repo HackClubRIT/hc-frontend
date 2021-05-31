@@ -1,5 +1,5 @@
-import logo from "../../assets/flag.png";
-import FooterItem from "./FooterItem";
+import logo from "../assets/flag.png";
+import Links from "./Links";
 
 const Footer = () => {
   return (
@@ -11,12 +11,19 @@ const Footer = () => {
         <div className="col">
           <div className="footer__nav">
             <ul className="footer__list">
-              <FooterItem href="newsletter" label="Newsletter" />
-              <FooterItem href="feedback" label="Feedback" />
-              <FooterItem href="philosophy" label="Philosophy" />
-              <FooterItem
-                href="conduct"
+              <Links href="newsletter" label="Newsletter" type="footer" />
+              <Links href="feedback" label="Feedback" type="footer" />
+              <Links
+                href="https://hackclub.com/philosophy/"
+                label="Philosophy"
+                type="footer"
+                external="true"
+              />
+              <Links
+                href="https://hackclub.com/conduct/"
                 label="Code of Conduct"
+                type="footer"
+                external="true"
               />
             </ul>
           </div>
