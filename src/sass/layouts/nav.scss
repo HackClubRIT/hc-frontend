@@ -19,7 +19,7 @@
   display: grid;
   grid-template-columns: 0.5fr auto 0.5fr;
   align-items: center;
-  height: 6rem;
+  height: 5rem;
   width: 90%;
   max-width: 1720px;
   margin: 0 auto;
@@ -27,16 +27,34 @@
   &__top {
     background: transparent;
 
-    a {
+    .nav__link {
       color: $color-snow;
+      &:hover,
+      &:active {
+        color: $color-snow;
+        transform: rotate(5deg) scale(1.2);
+      }
+    }
+
+    .nav__logo {
+      height: 7rem;
     }
   }
 
   &__moved {
-    background: linear-gradient($color-muted, $color-snow);
-    // box-shadow: 0 0.5rem 2rem rgba($color-dark, 0.2);
-    a {
-      color: $color-dark;
+    background: rgba($color-dark, 0.8);
+    .nav__link {
+      color: $color-snow;
+
+      &:hover,
+      &:active {
+        transform: rotate(5deg) scale(1.2);
+
+        @include respond(tab-port) {
+          background: $color-primary;
+          transition: all 0.4s ease-out;
+        }
+      }
     }
   }
 
@@ -49,6 +67,7 @@
   &__logo {
     height: 6rem;
     cursor: pointer;
+    transition: all 0.4s ease-out;
   }
 
   &__menu {
@@ -108,14 +127,22 @@
 
     &:hover,
     &:active {
-      color: $color-dark;
-      transform: rotate(5deg) scale(1);
+      color: $color-primary;
+      transform: rotate(5deg) scale(1.2);
 
       @include respond(tab-port) {
         background: $color-primary;
         transition: all 0.4s ease-out;
       }
     }
+  }
+
+  &__btn {
+    font-size: $default-font-size;
+    text-transform: uppercase;
+    color: $color-snow;
+    background: transparent;
+    border: none;
   }
 
   &__menu-toggle,

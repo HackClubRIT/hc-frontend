@@ -13,8 +13,11 @@ const Footer = () => {
             <ul className="footer__list">
               <FooterItem href="newsletter" label="Newsletter" />
               <FooterItem href="feedback" label="Feedback" />
-              <FooterItem href="gallery" label="Gallery" />
-              <FooterItem href="CoC" label="Code of Conduct" />
+              <FooterItem href="philosophy" label="Philosophy" />
+              <FooterItem
+                href="conduct"
+                label="Code of Conduct"
+              />
             </ul>
           </div>
         </div>

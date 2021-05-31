@@ -37,7 +37,7 @@ const Nav = () => {
           <NavItem href="/" label="Contact Us" />
           {!isLoggedIn && <NavItem href="auth" label="LogIn" />}
           <li className="nav__item">
-            {isLoggedIn && <button className="btn--toggle" onClick={logoutHandler}> Logout </button>}
+            {isLoggedIn && <button className="nav__btn nav__link" onClick={logoutHandler}> Logout </button>}
           </li>
         </ul>
       </nav>

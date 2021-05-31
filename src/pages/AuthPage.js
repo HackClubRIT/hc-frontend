@@ -47,15 +47,22 @@ const AuthPage = () => {
   return (
     <div className="auth-container">
       <div className="auth">
-        <h1>Login</h1>
+        <h1 className="heading-secondary u-margin-bottom-small">Login</h1>
         <form onSubmit={submitHandler}>
           <div className="auth__control">
-            <label htmlFor="email">Your Email</label>
-            <input type="email" id="email" required ref={emailInuputRef} />
+            <label className="heading-tertiary" htmlFor="email">Your Email</label>
+            <input
+              class="input"
+              type="email"
+              id="email"
+              required
+              ref={emailInuputRef}
+            />
           </div>
           <div className="auth__control">
-            <label htmlFor="password">Your Password</label>
+            <label className="heading-tertiary" htmlFor="password">Your Password</label>
             <input
+              class="input"
               type="password"
               id="password"
               required
@@ -63,7 +70,7 @@ const AuthPage = () => {
             />
           </div>
           <div className="auth__actions">
-            <button className="btn--toggle">Login</button>
+            <button className="btn--orange">Login</button>
           </div>
         </form>
       </div>

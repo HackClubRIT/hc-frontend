@@ -1,11 +1,45 @@
 @import "../abstracts/variables";
 
 .section-about {
-    background-color: $color-snow;
-    padding: 25rem 0;
-    margin-top: -20vh;
+  color: $color-snow;
+  padding: 25rem 0;
+  margin-top: -20vh;
+  font-weight: 400;
+  line-height: 1.7;
 
-    @include respond(tab-port) {
-        padding: 20rem 0;
-    }
+  @include respond(tab-port) {
+    padding: 20rem 0;
+  }
+}
+
+.header {
+  height: 100vh;
+  background: linear-gradient(
+      to left bottom,
+      rgba($color-primary-dark, 0.8),
+      rgba($color-primary, 0.8)
+    ),
+    url(/assets/header.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    only screen and (min-width: 125em) {
+    background: linear-gradient(
+        to left bottom,
+        rgba($color-primary-dark, 0.8),
+        rgba($color-primary, 0.8)
+      ),
+      url(/assets/header.jpg);
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }

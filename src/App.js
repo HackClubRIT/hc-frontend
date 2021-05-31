@@ -50,15 +50,22 @@ function App() {
             <AuthApplicationPage />
           </Route>
         )}
-
+        <Route
+          path="/conduct"
+          render={() => (window.location = "https://hackclub.com/conduct/")}
+        />
+        <Route
+          path="/philosophy"
+          render={() => (window.location = "https://hackclub.com/philosophy/")}
+        />
         {/* <Route path="/profile/application/:id">
                 <AuthApplicationPage />
             </Route> */}
         {/* <Route path="/profile/events"><AuthEventsPage /></Route>
             <Route path="/profile/feedback"><AuthFeedbackPage /></Route> */}
-      <Route path="*">
-        <Redirect to="/" />
-      </Route>
+        <Route path="*">
+          <Redirect to="/" />
+        </Route>
       </Switch>
       <Footer />
     </ThemeProvider>

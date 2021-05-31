@@ -52,7 +52,6 @@
         &:link, 
         &:visited {
             color: $color-muted;
-            background-color: $color-darkless;
             text-decoration: none;
             text-transform: uppercase;
             display: inline-block;
@@ -62,8 +61,6 @@
         &:hover,
         &:active {
             color: $color-primary;
-            background-color: $color-darkless;
-            box-shadow: 0 1rem 2rem rgba($color-darkless, .4);
             transform: rotate(5deg) scale(1);
         }
     }
