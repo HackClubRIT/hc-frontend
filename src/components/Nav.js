@@ -1,9 +1,16 @@
 import logo from "../assets/hackFlag.png";
 
-import { useState } from "react";
-import NavItem from "./NavItem";
+import { useState, useContext } from "react";
+import Links from "./Links";
+import AuthContext from "../store/auth-context";
 
 const Nav = () => {
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
+  const logoutHandler = () => {
+    authCtx.logout();
+  };
+
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
     if (window.scrollY >= 120) setColorchange(true);
@@ -16,7 +23,9 @@ const Nav = () => {
     <div className={colorChange ? "navbar nav__moved" : "navbar nav__top"}>
       <nav className="nav">
         <div className="nav__logo-box">
-          <img className="nav__logo" src={logo} alt="logo"></img>
+          <a href="/">
+            <img className="nav__logo" src={logo} alt="logo"></img>
+          </a>
         </div>
         <div className="nav__menu-toggle" id="mobile-menu">
           <span className="nav__bar"></span>
@@ -25,10 +34,18 @@ const Nav = () => {
           <span className="nav__bar"></span>
         </div>
         <ul className="nav__menu">
-          <NavItem href="/" label="Events" />
-          <NavItem href="/" label="Scrapbook" />
-          <NavItem href="/" label="Contact Us" />
-          <NavItem href="auth" label="LogIn" />
+          <Links href="/" label="Events" type="nav" />
+          <Links href="/" label="Scrapbook" type="nav" />
+          <Links href="/" label="Contact Us" type="nav" />
+          {!isLoggedIn && <Links href="auth" label="LogIn" type="nav"/>}
+          <li className="nav__item">
+            {isLoggedIn && (
+              <button className="nav__btn nav__link" onClick={logoutHandler}>
+                {" "}
+                Logout{" "}
+              </button>
+            )}
+          </li>
         </ul>
       </nav>
     </div>

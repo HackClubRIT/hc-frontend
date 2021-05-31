@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 import Button from "./Button";
 
 const Header = () => {
@@ -12,6 +13,19 @@ const Header = () => {
         </h1>
         <Button />
       </div>
+      <Link className="indicator__box"
+          activeClass="active"
+          to="scroll-down"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+          <div className="indicator">
+              <span></span>
+              <span></span>
+          </div>
+        </Link>
     </header>
   );
 };

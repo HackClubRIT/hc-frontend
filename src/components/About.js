@@ -1,11 +1,11 @@
-import img1 from "../assets/1.png";
-import img2 from "../assets/2.png";
-import img3 from "../assets/3.png";
+import img1 from "../assets/1.jpeg";
+import img2 from "../assets/2.jpeg";
+import img3 from "../assets/3.jpeg";
 
 const About = () => {
   return (
     <section className="section-about">
-      <div className="u-center-text u-margin-bottom-big">
+      <div className="u-center-text u-margin-bottom-big"  id="scroll-down">
         <h2 className="heading-secondary rainbow-text">Who are we?</h2>
       </div>
 
