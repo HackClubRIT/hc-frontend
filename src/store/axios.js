@@ -1,6 +1,13 @@
 import axios from "axios";
+import { config } from "dotenv";
 
-const baseURL = "https://hackclub-backend.herokuapp.com/";
+config();
+
+const baseURL = process.env.REACT_APP_API_URL;
+
+if(process.env.DEBUG)
+  console.log(baseURL);
+
 let headers = {};
 
 if (localStorage.token) {
