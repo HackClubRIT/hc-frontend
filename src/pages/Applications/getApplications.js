@@ -1,9 +1,9 @@
-import axiosInstance from "../../store/axios";
+import * as api from "../../store/fetch";
 
 const getApplications = async () => {
   try {
-    const res = await axiosInstance.get("/application");
-    return res.data;
+    const res = await api.get("application");
+    return res.json;
   } catch (error) {
     return error.response;
   }

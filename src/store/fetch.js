@@ -1,5 +1,6 @@
-async function send({ method, path, data, session, base }) {
+async function send({ method, path, data }) {
   const fetch = window.fetch;
+  const base = process.env.REACT_APP_API_URL;
 
   const opts = { method, headers: {} };
 
@@ -16,17 +17,8 @@ async function send({ method, path, data, session, base }) {
     }
   }
 
-  console.log(opts)
-
-  if (session) {
-    // Set the Authorization header
-    if (session.TOKEN) {
-      if (session.TOKEN.includes("Bearer")) {
-        opts.headers["Authorization"] = session.TOKEN;
-      } else {
-        opts.headers["Authorization"] = `Bearer ${session.TOKEN}`;
-      }
-    }
+  if (localStorage.token) {
+    opts.headers.Authorization = `Bearer ${localStorage.token}`;
   }
 
   let fullPath = encodeURI(`${base}/${path}`);
@@ -43,18 +35,18 @@ async function send({ method, path, data, session, base }) {
 /*
  * Shortcut methods for send
  */
-export function get(base, path, session) {
-  return send({ method: "GET", path, session, base });
+export function get(path) {
+  return send({ method: "GET", path });
 }
 
-export function del(base, path, data, session) {
-  return send({ method: "DELETE", path, data, session, base });
+export function del(path, data) {
+  return send({ method: "DELETE", path, data });
 }
 
-export function post(base, path, data, session) {
-  return send({ method: "POST", path, data, session, base });
+export function post(path, data) {
+  return send({ method: "POST", path, data });
 }
 
-export function patch(base, path, data, session) {
-  return send({ method: "PATCH", path, data, session, base });
+export function patch(path, data) {
+  return send({ method: "PATCH", path, data });
 }

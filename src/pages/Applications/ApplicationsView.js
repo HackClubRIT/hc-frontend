@@ -19,7 +19,7 @@ const ApplicationsViewPage = () => {
         data.map((info) => (
           <div key={info.id} className="application">
             <h3 className="heading-tertiary">{info.name}</h3>
-            <p className="paragraph row">
+            <div className="paragraph row">
               <div className="col">
                 {info.email}
                 <br />
@@ -33,7 +33,7 @@ const ApplicationsViewPage = () => {
                   Edit &rarr; 
                 </a>
               </div>
-            </p>
+            </div>
           </div>
         ))}
     </div>

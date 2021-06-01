@@ -1,19 +1,17 @@
-import { useRef } from "react";
-// import { useHistory } from "react-router-dom";
+import { useRef, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import * as api from "../store/fetch";
-// import axiosInstance from "../store/axios";
 
 import { isEmailValid } from "../store/validiate";
-// import AuthContext from "../store/auth-context";
-
+import AuthContext from "../store/auth-context";
 
 const AuthPage = () => {
-  // const history = useHistory();
+  const history = useHistory();
 
   const emailInuputRef = useRef();
   const passwordInputRef = useRef();
 
-  // const authCtx = useContext(AuthContext);
+  const authCtx = useContext(AuthContext);
 
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -22,35 +20,24 @@ const AuthPage = () => {
     const enteredPassword = passwordInputRef.current.value;
 
     if (isEmailValid(enteredEmail)) {
-      // const formData = new FormData();
-      // formData.append("username", enteredEmail);
-      // formData.append("password", enteredPassword);
-
       try {
-        // const res = await axiosInstance.post("auth/token/", formData);
-        const { json } = await api.post(
-          process.env.REACT_APP_API_URL,
-          "auth/token",
-          {
-            type: "formData",
-            username: enteredEmail,
-            password: enteredPassword,
-          }
-        );
-        console.log(json);
-        // authCtx.login(res.data.access_token);
-        // history.push("/profile/application");
+        const { json } = await api.post("auth/token", {
+          type: "formData",
+          username: enteredEmail,
+          password: enteredPassword,
+        });
+        authCtx.login(json.access_token);
+        history.push("/profile/application");
       } catch (error) {
-        alert(error);
-        // let errorMessage;
+        let errorMessage;
 
-        // if (error.response.status === 422)
-        //   errorMessage = "Please enter a vaild email id or password";
-        // else if (error.response.status === 500)
-        //   errorMessage = "Opps, something went wrong please try again later!";
-        // else errorMessage = error.response.data.detail;
+        if (error.response.status === 422)
+          errorMessage = "Please enter a vaild email id or password";
+        else if (error.response.status === 500)
+          errorMessage = "Opps, something went wrong please try again later!";
+        else errorMessage = error.response.data.detail;
 
-        // alert(errorMessage);
+        alert(errorMessage);
       }
     }
   };
