@@ -1,7 +1,13 @@
+import axiosInstance from "../store/axios";
 import { Link } from "react-scroll";
 import Button from "./Button";
 
 const Header = () => {
+  const handleSubmit = async () => {
+    const res = await axiosInstance.get();
+    console.log(res)
+  }
+
   return (
     <header className="header">
       <div className="header__text-box">
@@ -11,7 +17,7 @@ const Header = () => {
             To cultivate a community of makers
           </span>
         </h1>
-        <Button />
+        <button onClick={handleSubmit}></button>
       </div>
       <Link className="indicator__box"
           activeClass="active"
