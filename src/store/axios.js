@@ -1,12 +1,8 @@
 import axios from "axios";
-import { config } from "dotenv";
-
-config();
 
 const baseURL = process.env.REACT_APP_API_URL;
 
-if(process.env.DEBUG)
-  console.log(baseURL);
+if (process.env.DEBUG) console.log(baseURL);
 
 let headers = {};
 

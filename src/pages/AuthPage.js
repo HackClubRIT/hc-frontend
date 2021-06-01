@@ -1,18 +1,19 @@
-import { useRef, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useRef } from "react";
+// import { useHistory } from "react-router-dom";
 import * as api from "../store/fetch";
 // import axiosInstance from "../store/axios";
 
 import { isEmailValid } from "../store/validiate";
-import AuthContext from "../store/auth-context";
+// import AuthContext from "../store/auth-context";
+
 
 const AuthPage = () => {
-  const history = useHistory();
+  // const history = useHistory();
 
   const emailInuputRef = useRef();
   const passwordInputRef = useRef();
 
-  const authCtx = useContext(AuthContext);
+  // const authCtx = useContext(AuthContext);
 
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -27,7 +28,7 @@ const AuthPage = () => {
 
       try {
         // const res = await axiosInstance.post("auth/token/", formData);
-        const { res, json } = await api.post(
+        const { json } = await api.post(
           process.env.REACT_APP_API_URL,
           "auth/token",
           {
@@ -36,7 +37,7 @@ const AuthPage = () => {
             password: enteredPassword,
           }
         );
-        console.log(json)
+        console.log(json);
         // authCtx.login(res.data.access_token);
         // history.push("/profile/application");
       } catch (error) {
