@@ -26,6 +26,8 @@ const AuthPage = () => {
           username: enteredEmail,
           password: enteredPassword,
         });
+
+        if (process.env.DEBUG) console.log(json);
         authCtx.login(json.access_token);
         history.push("/auth/application");
       } catch (error) {
@@ -72,7 +74,7 @@ const AuthPage = () => {
             />
           </div>
           <div className="auth__actions">
-            <button className="btn--orange">Login</button>
+            <button className="btn--normal">Login</button>
           </div>
         </form>
       </div>

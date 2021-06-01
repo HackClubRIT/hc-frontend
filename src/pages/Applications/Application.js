@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import * as api from "../../store/fetch";
 
 const Application = () => {
+  let isApproved;
+
   let [data, dataSet] = useState("");
   const { id } = useParams();
 
@@ -18,6 +20,21 @@ const Application = () => {
   useEffect(() => {
     fetchResponse();
   });
+
+  const handleClick = async () => {
+    let f = true;
+    if (isApproved) {
+      if (!window.confirm("Are you sure you want to approve")) f = false;
+    } else {
+      if (!window.confirm("Are you sure you want to reject")) f = false;
+    }
+    if (f === true) {
+      const { json } = await api.post(`application/${id}/`, {
+        approved: isApproved,
+      });
+      if (process.env.DEBUG) console.log(json);
+    }
+  };
 
   return (
     <div key={data.id} className="container">
@@ -57,6 +74,29 @@ const Application = () => {
 
             <p>STATUS</p>
             <div className="u-textbox">{data.status}</div>
+
+            <br />
+
+            <div className="row">
+              <button
+                onClick={() => {
+                  isApproved = false;
+                  handleClick();
+                }}
+                className="col btn--normal"
+              >
+                Reject
+              </button>
+              <button
+                onClick={() => {
+                  isApproved = true;
+                  handleClick();
+                }}
+                className="col btn--normal"
+              >
+                Approve
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -26,10 +26,17 @@ async function send({ method, path, data }) {
     console.log(method, fullPath);
     console.log(opts);
   }
-  const res = await fetch(fullPath, opts);
-  const json = await res.json();
 
-  return { res, json };
+  try {
+    const res = await fetch(fullPath, opts);
+
+    if (res) {
+      const json = await res.json();
+      return { res, json };
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 /*
