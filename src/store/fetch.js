@@ -29,7 +29,7 @@ async function send({ method, path, data, session, base }) {
     }
   }
 
-  let fullPath = encodeURI(`${base}/${path}/`);
+  let fullPath = encodeURI(`${base}/${path}`);
   if (process.env.DEBUG) {
     console.log(method, fullPath);
     console.log(opts);
