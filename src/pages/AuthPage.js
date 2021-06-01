@@ -30,7 +30,7 @@ const AuthPage = () => {
         // const res = await axiosInstance.post("auth/token/", formData);
         const { json } = await api.post(
           process.env.REACT_APP_API_URL,
-          "auth/token/",
+          "auth/token",
           {
             type: "formData",
             username: enteredEmail,
