@@ -6,8 +6,8 @@ import theme from "@hackclub/theme";
 import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage";
 import EventsPage from "./pages/EventsPage";
-import ProfilePage from "./pages/ProfilePage";
 import FeedbackPage from "./pages/FeedbackPage";
+import Application from "./pages/Applications/Application";
 import ApplicationPage from "./pages/Applications/ApplicationsPage";
 import ApplicationsViewPage from "./pages/Applications/ApplicationsView";
 // import ColorSwitcher from "./components/ColorSwitcher";
@@ -47,20 +47,17 @@ function App() {
           </Route>
         )}
         {authCtx.isLoggedIn && (
-          <Route path="/profile" exact>
-            <ProfilePage />
-          </Route>
-        )}
-        {authCtx.isLoggedIn && (
-          <Route path="/profile/application" exact>
+          <Route path="/auth/application" exact>
             <ApplicationsViewPage />
           </Route>
         )}
-        {/* <Route path="/profile/application/:id">
-                <ApplicationsViewPage />
-            </Route> */}
-        {/* <Route path="/profile/events"><AuthEventsPage /></Route>
-            <Route path="/profile/feedback"><AuthFeedbackPage /></Route> */}
+        {authCtx.isLoggedIn && (
+          <Route path="/auth/application/:id" exact>
+            <Application />
+          </Route>
+        )}
+        {/* <Route path="/auth/events"><AuthEventsPage /></Route>
+            <Route path="/auth/feedback"><AuthFeedbackPage /></Route> */}
         <Route path="*">
           <Redirect to="/" />
         </Route>

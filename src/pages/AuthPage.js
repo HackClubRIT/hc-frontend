@@ -27,7 +27,7 @@ const AuthPage = () => {
           password: enteredPassword,
         });
         authCtx.login(json.access_token);
-        history.push("/profile/application");
+        history.push("/auth/application");
       } catch (error) {
         let errorMessage;
 

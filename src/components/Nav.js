@@ -36,8 +36,12 @@ const Nav = () => {
         <ul className="nav__menu">
           <Links href="events" label="Events" type="nav" />
           <Links href="scrapbook" label="Scrapbook" type="nav" />
-          {!isLoggedIn && <Links href="contact" label="Contact Us" type="nav" />}
-          {isLoggedIn && <Links href="profile" label="profile" type="nav" />}
+          {!isLoggedIn && (
+            <Links href="contact" label="Contact Us" type="nav" />
+          )}
+          {isLoggedIn && (
+            <Links href="auth/application" label="application" type="nav" />
+          )}
           {!isLoggedIn && <Links href="auth" label="LogIn" type="nav" />}
           <li className="nav__item">
             {isLoggedIn && (

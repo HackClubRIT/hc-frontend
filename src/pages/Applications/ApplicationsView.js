@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
-import getApplications from "./getApplications";
+import * as api from "../../store/fetch";
 
 const ApplicationsViewPage = () => {
   let [data, dataSet] = useState("");
 
   const fetchResponse = async () => {
-    dataSet(await getApplications());
+    try {
+      const res = await api.get("application/");
+      dataSet(res.json);
+    } catch (error) {
+      alert(error.response);
+    }
   };
 
   useEffect(() => {
@@ -27,10 +32,10 @@ const ApplicationsViewPage = () => {
               </div>
               <div className="col">
                 <a
-                  href={`/profile/application/${info.id}`}
+                  href={`/auth/application/${info.id}`}
                   className="btn-text"
                 >
-                  Edit &rarr; 
+                  Edit &rarr;
                 </a>
               </div>
             </div>

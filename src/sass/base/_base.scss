@@ -45,7 +45,7 @@ label {
 
 input {
   font: inherit;
-  background-color: rgba($color-dark, 0.26);
+  background: rgba($color-dark, 0.26);
   color: $color-snow;
   border-radius: 1rem;
   border: 1px solid rgba($color-dark, 0.26);
@@ -58,4 +58,9 @@ input {
   @include respond(tab-port) {
     width: 95%;
   }
+}
+
+a {
+  color: $color-snow;
+  text-decoration: none;
 }
