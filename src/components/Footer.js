@@ -35,8 +35,8 @@ const Footer = () => {
               Irene
             </a>{" "}
             &amp;{" "}
-            <a href="http://github.com/UKnowWhoIm/" className="footer__link">
-              Sidarth.
+            <a href="https://uknowwhoim.me/" className="footer__link">
+              Sidharth.
             </a>{" "}
             Copyright &copy; 2021.
           </p>
