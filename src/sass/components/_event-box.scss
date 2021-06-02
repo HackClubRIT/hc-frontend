@@ -1,0 +1,28 @@
+.event-box {
+  background-color: rgba($color-darkless, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-darkless, 0.25);
+  transition: transform 0.3s;
+  min-height: 50rem;
+
+  @include respond(tab-port) {
+    padding: 2rem;
+    min-height: fit-content;
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 1rem;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      margin-bottom: 0;
+    }
+  }
+}

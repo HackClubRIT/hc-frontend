@@ -25,12 +25,12 @@ const ApplicationsViewPage = () => {
           <div key={info.id} className="application">
             <h3 className="heading-tertiary">{info.name}</h3>
             <div className="paragraph row">
-              <div className="col">
+              <div className="col-1-of-2">
                 {info.email}
                 <br />
                 {info.status}
               </div>
-              <div className="col">
+              <div className="col-1-of-2">
                 <a
                   href={`/auth/application/${info.id}`}
                   className="btn-text"

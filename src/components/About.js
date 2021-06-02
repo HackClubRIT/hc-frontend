@@ -4,13 +4,13 @@ import img3 from "../assets/3.jpeg";
 
 const About = () => {
   return (
-    <section className="section-about">
+    <section className="section">
       <div className="u-center-text u-margin-bottom-big"  id="scroll-down">
         <h2 className="heading-secondary rainbow-text">Who are we?</h2>
       </div>
 
       <div className="row">
-        <div className="col">
+        <div className="col-1-of-2">
           <h3 className="heading-tertiary u-margin-bottom-small">
             About Hack Club
           </h3>
@@ -53,7 +53,7 @@ const About = () => {
             Learn More &rarr;
           </a>
         </div>
-        <div className="col">
+        <div className="col-1-of-2">
           <div className="composition">
             <img
               src={img1}

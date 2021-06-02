@@ -8,7 +8,7 @@ const Footer = () => {
         <img className="footer__logo" src={logo} alt="logo" />
       </div>
       <div className="row">
-        <div className="col">
+        <div className="col-1-of-2">
           <div className="footer__nav">
             <ul className="footer__list">
               <Links href="newsletter" label="Newsletter" type="footer" />
@@ -28,7 +28,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="col">
+        <div className="col-1-of-2">
           <p className="footer__copyright">
             Built by{" "}
             <a href="https://github.com/irenekurien/" className="footer__link">

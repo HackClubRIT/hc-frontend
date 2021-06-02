@@ -21,7 +21,7 @@ const AuthPage = () => {
 
     if (isEmailValid(enteredEmail)) {
       try {
-        const { json } = await api.post("auth/token", {
+        const { json } = await api.post("auth/token/", {
           type: "formData",
           username: enteredEmail,
           password: enteredPassword,

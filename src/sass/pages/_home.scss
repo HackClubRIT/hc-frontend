@@ -1,14 +1,23 @@
 @import "../abstracts/variables";
 
-.section-about {
+.section {
   color: $color-snow;
-  padding: 25rem 0;
-  margin-top: -20vh;
+  padding: 5rem 0;
   font-weight: 400;
   line-height: 1.7;
+  margin: 5rem 0;
 
   @include respond(tab-port) {
-    padding: 20rem 0;
+    margin: 0;
+  }
+}
+
+.section-events {
+  background-image: linear-gradient($color-primary 0.1em, transparent 0.1em);
+  background-size: 100% 1.2em;
+
+  @include respond(tab-port) {
+    height: fit-content;
   }
 }
 
