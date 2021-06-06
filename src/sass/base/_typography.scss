@@ -34,7 +34,6 @@
 }
 
 .heading-secondary {
-  background: $color-dark;
   color: $color-snow;
   font-size: 3.5rem;
   text-transform: uppercase;
@@ -62,6 +61,11 @@
 
   &:not(:last-child) {
     margin-bottom: 3rem;
+  }
+
+  &--red {
+    background: rgba($color-primary-dark, 0.5);
+    color: $color-snow;
   }
 }
 

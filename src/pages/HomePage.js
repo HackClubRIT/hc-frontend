@@ -9,7 +9,7 @@ const HomePage = () => {
       <About />
       <div className="section section-events">
         <div className="u-center-text u-margin-bottom-medium">
-          <h2 className="heading-secondary rainbow-text">Events</h2>
+          <h2 className="heading-secondary">Events</h2>
         </div>
         <div className="row">
           <Event
