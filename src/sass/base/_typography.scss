@@ -64,8 +64,8 @@
   }
 
   &--red {
-    background: rgba($color-primary-dark, 0.5);
-    color: $color-snow;
+    color: $color-primary-dark;
+    font-weight: 400;
   }
 }
 
