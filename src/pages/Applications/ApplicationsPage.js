@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import * as api from "../../store/fetch";
-import * as qn from "../../store/constants";
 
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
@@ -10,12 +8,14 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import { isEmailValid, isEmpty, isPhoneNumber } from "../../store/validiate";
 import TextInput from "../../components/TextInput";
+import * as qn from "../../store/constants";
+import * as api from "../../store/fetch";
 
 const useStyles = makeStyles((theme) => ({
   form__group: {
     display: "grid",
     gridTemplateColumns: "auto auto auto auto auto",
-    marginBottom: "1rem"
+    marginBottom: "1rem",
   },
 }));
 
@@ -64,20 +64,6 @@ const ApplicationsPage = () => {
     event.preventDefault();
 
     if (validateData()) {
-      // try {
-      //   const { res, json } = await api.post("auth/token/", {
-      //     formData
-      //   });
-
-      //   if (res.ok) {
-      //     if (process.env.DEBUG) console.log(json);
-      //     //   history.push("/auth/application");
-      //   } else throw res;
-      // } catch (error) {
-      //   if (error.status === 500)
-      //     e = "Opps, something went wrong please try again later!";
-      //   else e = "Please enter a valid email address or password";
-      // }
       console.log(formData);
     } else e = "Oops, looks like you've missed out something!";
 
