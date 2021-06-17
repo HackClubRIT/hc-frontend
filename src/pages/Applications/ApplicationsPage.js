@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 import Contact from "./Form/Contact";
 import { isEmailValid, isEmpty, isPhoneNumber } from "../../store/validiate";
@@ -8,7 +8,7 @@ const ApplicationsPage = () => {
   let e,
     formData = { data: {} };
 
-  const history = useHistory();
+  // const history = useHistory();
 
   const [prev, setPrev] = useState(false);
 
@@ -41,10 +41,10 @@ const ApplicationsPage = () => {
     formData = JSON.parse(localStorage.getItem("formData"));
   };
 
-  const submitHandler = async (event) => {
-    event.preventDefault();
+  // const submitHandler = async (event) => {
+  //   event.preventDefault();
 
-    if (validateData()) {
+  //   if (validateData()) {
       // try {
       //   const { res, json } = await api.post("auth/token/", {
       //     formData
@@ -59,11 +59,11 @@ const ApplicationsPage = () => {
       //     e = "Opps, something went wrong please try again later!";
       //   else e = "Please enter a valid email address or password";
       // }
-      console.log(formData);
-    } else e = "Oops, looks like you've missed out something!";
+  //     console.log(formData);
+  //   } else e = "Oops, looks like you've missed out something!";
 
-    if (e) alert(e);
-  };
+  //   if (e) alert(e);
+  // };
 
   if (!prev) {
     return (
