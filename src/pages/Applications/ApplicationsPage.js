@@ -5,8 +5,7 @@ import Contact from "./Form/Contact";
 import { isEmailValid, isEmpty, isPhoneNumber } from "../../store/validiate";
 
 const ApplicationsPage = () => {
-  let e,
-    formData = { data: {} };
+  let formData = { data: {} };
 
   // const history = useHistory();
 
@@ -45,20 +44,20 @@ const ApplicationsPage = () => {
   //   event.preventDefault();
 
   //   if (validateData()) {
-      // try {
-      //   const { res, json } = await api.post("auth/token/", {
-      //     formData
-      //   });
+  // try {
+  //   const { res, json } = await api.post("auth/token/", {
+  //     formData
+  //   });
 
-      //   if (res.ok) {
-      //     if (process.env.DEBUG) console.log(json);
-      //     //   history.push("/auth/application");
-      //   } else throw res;
-      // } catch (error) {
-      //   if (error.status === 500)
-      //     e = "Opps, something went wrong please try again later!";
-      //   else e = "Please enter a valid email address or password";
-      // }
+  //   if (res.ok) {
+  //     if (process.env.DEBUG) console.log(json);
+  //     //   history.push("/auth/application");
+  //   } else throw res;
+  // } catch (error) {
+  //   if (error.status === 500)
+  //     e = "Opps, something went wrong please try again later!";
+  //   else e = "Please enter a valid email address or password";
+  // }
   //     console.log(formData);
   //   } else e = "Oops, looks like you've missed out something!";
 
@@ -85,12 +84,12 @@ const ApplicationsPage = () => {
           </h1>
           <form onSubmit={togglePrevHandler}>
             {/* {!prev && ( */}
-              <div>
-                <Contact />
-                <div className="form__actions">
-                  <button className="btn--normal">Back</button>
-                </div>
+            <div>
+              <Contact />
+              <div className="form__actions">
+                <button className="btn--normal">Back</button>
               </div>
+            </div>
             {/* )} */}
           </form>
         </div>
