@@ -29,11 +29,8 @@ async function send({ method, path, data }) {
 
   try {
     const res = await fetch(fullPath, opts);
-
-    if (res) {
-      const json = await res.json();
-      return { res, json };
-    }
+    const json = await res.json();
+    return { res, json };
   } catch (error) {
     console.log(error);
   }

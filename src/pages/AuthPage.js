@@ -1,4 +1,4 @@
-import { useRef, useContext } from "react";
+import { useRef, useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import * as api from "../store/fetch";
 
@@ -6,12 +6,16 @@ import { isEmailValid } from "../store/validiate";
 import AuthContext from "../store/auth-context";
 
 const AuthPage = () => {
+  let e;
+
   const history = useHistory();
 
   const emailInuputRef = useRef();
   const passwordInputRef = useRef();
 
   const authCtx = useContext(AuthContext);
+
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -21,35 +25,38 @@ const AuthPage = () => {
 
     if (isEmailValid(enteredEmail)) {
       try {
-        const { json } = await api.post("auth/token/", {
+        const { res, json } = await api.post("auth/token/", {
           type: "formData",
           username: enteredEmail,
           password: enteredPassword,
         });
 
-        if (process.env.DEBUG) console.log(json);
-        authCtx.login(json.access_token);
-        history.push("/auth/application");
+        if (res.ok) {
+          if (process.env.DEBUG) console.log(json);
+          authCtx.login(json.access_token);
+          history.push("/auth/application");
+        } else throw res;
       } catch (error) {
-        let errorMessage;
-
-        if (error.response.status === 422)
-          errorMessage = "Please enter a vaild email id or password";
-        else if (error.response.status === 500)
-          errorMessage = "Opps, something went wrong please try again later!";
-        else errorMessage = error.response.data.detail;
-
-        alert(errorMessage);
+        if (error.status === 500)
+          e = "Opps, something went wrong please try again later!";
+        else e = "Please enter a valid email address or password";
       }
-    }
+    } else e = "Please enter a valid email address or password";
+
+    setErrorMessage(e);
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth">
-        <h1 className="heading-secondary u-margin-bottom-small">Login</h1>
+    <div className="form-container">
+      <div className="form">
+        <h1 className="heading-secondary rainbow-text u-margin-bottom-small">Login</h1>
         <form onSubmit={submitHandler}>
-          <div className="auth__control">
+          <div className="form__control">
+            {errorMessage && (
+              <p className="paragraph--red u-margin-bottom-small">
+                {errorMessage}
+              </p>
+            )}
             <label className="heading-tertiary" htmlFor="email">
               Your Email
             </label>
@@ -61,7 +68,7 @@ const AuthPage = () => {
               ref={emailInuputRef}
             />
           </div>
-          <div className="auth__control">
+          <div className="form__control u-margin-bottom-medium">
             <label className="heading-tertiary" htmlFor="password">
               Your Password
             </label>
@@ -73,7 +80,7 @@ const AuthPage = () => {
               ref={passwordInputRef}
             />
           </div>
-          <div className="auth__actions">
+          <div className="form__actions u-margin-bottom-small">
             <button className="btn--normal">Login</button>
           </div>
         </form>

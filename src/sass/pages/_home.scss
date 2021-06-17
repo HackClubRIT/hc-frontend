@@ -13,8 +13,13 @@
 }
 
 .section-events {
-  background-image: linear-gradient($color-primary 0.1em, transparent 0.1em);
-  background-size: 100% 1.2em;
+  background: linear-gradient(
+      to left bottom,
+      rgba($color-primary-dark, 0.8),
+      rgba($color-primary, 0.8)
+    ),
+    url(/assets/bg.jpeg);
+  background-size: cover;
 
   @include respond(tab-port) {
     height: fit-content;
