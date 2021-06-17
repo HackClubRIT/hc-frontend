@@ -5,13 +5,13 @@ import * as api from "../../store/fetch";
 const Application = () => {
   let isApproved;
 
-  let [data, dataSet] = useState("");
+  let [data, setData] = useState("");
   const { id } = useParams();
 
   const fetchResponse = async () => {
     try {
       const res = await api.get(`application/${id}/`);
-      dataSet(res.json);
+      setData(res.json);
     } catch (error) {
       alert(error);
     }
